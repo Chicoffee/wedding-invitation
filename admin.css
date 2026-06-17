@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f4;
+  color: #1a1a1a;
+}
+
+/* ---------- Login ---------- */
+.login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.login-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 360px;
+  width: 100%;
+}
+
+.login-card h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.login-card .subtitle {
+  font-size: 13px;
+  color: #777;
+  margin: 0 0 20px;
+}
+
+.login-card label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #378add;
+  border-radius: 8px;
+  background: #e6f1fb;
+  color: #185fa5;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login-card button:hover {
+  background: #d2e6f9;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 10px 0 0;
+  min-height: 16px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #999;
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+.back-link:hover {
+  color: #378add;
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dashboard-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logout-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Summary cards */
+.summary-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.summary-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #185fa5;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Table */
+.table-wrap {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 700px;
+}
+
+thead {
+  background: #f7f7f7;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+tbody tr:hover {
+  background: #fafafa;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-yes {
+  background: #e3f6e7;
+  color: #1f8a4c;
+}
+
+.badge-no {
+  background: #fce8e6;
+  color: #c0392b;
+}
+
+.action-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.action-btn.edit {
+  color: #378add;
+}
+
+.action-btn.edit:hover {
+  background: #e6f1fb;
+}
+
+.action-btn.delete {
+  color: #c0392b;
+}
+
+.action-btn.delete:hover {
+  background: #fce8e6;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* ---------- Edit Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.modal-card h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.modal-card label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.modal-card input,
+.modal-card select,
+.modal-card textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.modal-card textarea {
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#saveEditBtn {
+  border: 1px solid #378add;
+  background: #e6f1fb;
+  color: #185fa5;
+}
+
+#saveEditBtn:hover {
+  background: #d2e6f9;
+}
+
+.secondary-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #444;
+}
+
+.secondary-btn:hover {
+  background: #f0f0f0;
+}

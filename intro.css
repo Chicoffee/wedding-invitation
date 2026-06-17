@@ -1,0 +1,160 @@
+/* ===== INTRO / LOADING SCREEN ===== */
+.intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  z-index: 10001;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.intro.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-stage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+
+.intro-stage.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- Stage 1: Monogram ---- */
+.monogram-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.monogram-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  -webkit-mask-image: conic-gradient(#000 0deg, #000 0deg, transparent 0deg);
+  mask-image: conic-gradient(#000 0deg, #000 0deg, transparent 0deg);
+}
+
+.monogram-text {
+  font-family: 'Allura', cursive;
+  font-size: 7.5rem;
+  line-height: 1;
+  color: var(--ink);
+  padding: 60px 70px;
+  white-space: nowrap;
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  animation: write-reveal 1.8s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+.monogram-text .amp {
+  color: var(--rose);
+  font-size: 0.75em;
+  margin: 0 0.05em;
+}
+
+@keyframes write-reveal {
+  to { clip-path: inset(0 0% 0 0); }
+}
+
+.intro-text {
+  margin-top: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: intro-fade-up 1s ease forwards;
+  animation-delay: 2.6s;
+}
+
+.intro-names {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+}
+
+.intro-date {
+  margin-top: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+@keyframes intro-fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-hint {
+  position: absolute;
+  bottom: -50px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage);
+  opacity: 0;
+  animation: intro-fade-up 1s ease forwards;
+  animation-delay: 3.4s;
+}
+
+/* ---- Stage 2: Welcome ---- */
+.welcome-pre {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.welcome-title {
+  font-family: 'Allura', cursive;
+  font-size: clamp(3rem, 9vw, 5rem);
+  color: var(--ink);
+  text-align: center;
+  padding: 0 16px;
+}
+
+.welcome-sub {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .monogram-ring {
+    width: 180px;
+    height: 180px;
+  }
+  .monogram-text {
+    font-size: 5rem;
+    padding: 45px 50px;
+  }
+}

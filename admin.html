@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="admin.css" />
+<title>RSVP Admin Dashboard</title>
+</head>
+<body>
+
+  <!-- LOGIN VIEW -->
+  <div class="login-wrap" id="loginView">
+    <div class="login-card">
+      <h2><i class="fa-solid fa-lock"></i> Admin Login</h2>
+      <p class="subtitle">Sign in to manage RSVPs</p>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="admin@example.com" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" />
+
+      <button id="loginBtn">Log In</button>
+      <p class="error" id="loginError"></p>
+
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to site</a>
+    </div>
+  </div>
+
+  <!-- DASHBOARD VIEW -->
+  <div class="dashboard" id="dashboardView" style="display:none;">
+    <header class="dashboard-header">
+      <h1>RSVP Dashboard</h1>
+      <button id="logoutBtn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+    </header>
+
+    <div class="summary-row">
+      <div class="summary-card">
+        <span class="summary-number" id="totalResponses">0</span>
+        <span class="summary-label">Total Responses</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number" id="totalAttending">0</span>
+        <span class="summary-label">Attending</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number" id="totalDeclined">0</span>
+        <span class="summary-label">Not Attending</span>
+      </div>
+      <div class="summary-card">
+        <span class="summary-number" id="totalGuests">0</span>
+        <span class="summary-label">Total Guests</span>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="rsvpTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Attending</th>
+            <th>Guests</th>
+            <th>Party Names</th>
+            <th>Last Updated</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="rsvpTableBody">
+          <!-- rows injected by admin.js -->
+        </tbody>
+      </table>
+      <p id="emptyState" class="empty-state" style="display:none;">No RSVPs yet.</p>
+    </div>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div class="modal-overlay" id="editModal" style="display:none;">
+    <div class="modal-card">
+      <h2>Edit RSVP</h2>
+
+      <label for="editName">Name</label>
+      <input type="text" id="editName" />
+
+      <label for="editAttending">Attending</label>
+      <select id="editAttending">
+        <option value="yes">Yes, I'll be going</option>
+        <option value="no">No, I can't make it</option>
+      </select>
+
+      <label for="editGuestCount">Number of guests</label>
+      <input type="number" id="editGuestCount" min="1" />
+
+      <label for="editGuestNames">Party names (comma separated)</label>
+      <textarea id="editGuestNames" rows="3"></textarea>
+
+      <div class="modal-actions">
+        <button id="cancelEditBtn" class="secondary-btn">Cancel</button>
+        <button id="saveEditBtn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
