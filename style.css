@@ -117,44 +117,153 @@ body {
 }
 
 .calendar-card {
-    width: min(550px, 95%);
-    border: 2px solid black;
-    background-color: #eec9a2ab;
-    border-radius: 30px;
+    width: min(520px, 95%);
+    border: 2px solid hsla(0, 20%, 86%, 0.427);
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
     margin-top: 40px;
-    padding: clamp(20px, 5vw, 35px) clamp(16px, 4vw, 30px);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(243, 242, 242, 0.3);
 }
 
-.calendar-card h1 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+.calendar-card__header {
+    background-color: #9C1F2E;
+    padding: 18px 20px 14px;
+    text-align: center;
+}
+
+.calendar-card__save-label {
+    font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 4px;
+}
+
+.calendar-card__month {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 500;
-    margin-bottom: 30px;
-    text-align: center;
+    color: #ffffff;
+    margin: 0;
 }
 
-.calendar-month {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+
+.calendar {
+    padding: clamp(16px, 4vw, 24px) clamp(14px, 4vw, 24px) 8px;
 }
 
 .calendar-grid {
     display: grid;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 4px 0;
     text-align: center;
-    padding-top: 20px;
 }
 
-.calendar-day-highlight {
-    border: 2px solid  rgb(255, 0, 0);
+.calendar-header {
+    font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+    letter-spacing: 0.08em;
+    color: #888;
+    padding-bottom: 8px;
+}
+
+.calendar-day {
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    padding: 5px 2px;
+    color: #3A3530;
+    position: relative;
+}
+
+.calendar-day--wedding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #9C1F2E;
     border-radius: 50%;
-    background-color: red;
+    width: clamp(30px, 7vw, 38px);
+    height: clamp(30px, 7vw, 38px);
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1;
+}
+
+.calendar-day__ring {
+    font-size: clamp(0.55rem, 1.4vw, 0.7rem);
+    line-height: 1;
+    display: block;
+}
+
+.calendar-card__footer {
+    border-top: 1px solid rgba(156, 31, 46, 0.15);
+    padding: clamp(12px, 3vw, 18px) 20px;
+    text-align: center;
+    background-color: #fdf8f6;
+}
+
+.calendar-card__footer p {
+    font-size: clamp(0.75rem, 2vw, 0.88rem);
+    color: #7a5a5a;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.map-card {
+    width: min(550px, 92%);
+    margin-top: 40px;
+    padding: clamp(20px, 5vw, 35px);
+    border: 2px solid hsla(0, 20%, 86%, 0.427);
+    background: #9C1F2E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(243, 242, 242, 0.3);
+    gap: clamp(12px, 3vw, 20px);
+}
+
+.map-card h1 {
+    color: #fff;
+    font-size: clamp(1.3rem, 3.5vw, 1.5rem);
+}
+
+.subtext {
+    color: white;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.map-card p {
+    color: white;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    line-height: 1.6;
+
+}
+
+.open-map-btn {
+    border: 2px solid black;
+    background-color: #d23f50;
+    text-decoration: none;
+    height: clamp(42px, 8vw, 50px);
+    width: clamp(110px, 20vw, 130px);
+    font-weight: bold;
+    font-family: "EB Garamond", sans-serif;
+    border-radius: 50px;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    cursor: pointer;
+    letter-spacing: 0.05rem;
+    transition: background-color 0.2s ease;
+    color: white;
+}
+
+.open-map-btn:hover {
+    background-color: #e96372;
 }
 
 .timer-container {
@@ -233,25 +342,6 @@ body {
     width: 100%;
     max-width: 450px;
     border-radius: 30px;
-}
-
-.open-map-btn {
-    border: 2px solid black;
-    background-color: #d4a017;
-    text-decoration: none;
-    height: clamp(42px, 8vw, 50px);
-    width: clamp(110px, 20vw, 130px);
-    font-weight: bold;
-    font-family: "EB Garamond", sans-serif;
-    border-radius: 50px;
-    font-size: clamp(0.75rem, 2vw, 0.9rem);
-    cursor: pointer;
-    letter-spacing: 0.05rem;
-    transition: background-color 0.2s ease;
-}
-
-.open-map-btn:hover {
-    background-color: #b8880f;
 }
 
 #ourStory{
@@ -386,6 +476,11 @@ body {
     border-radius: 50%;
     box-sizing: border-box;
     z-index: 2;
+}
+
+.ring-icon {
+    height: 80px;
+    width: 80;
 }
 
 #entourage {
@@ -533,10 +628,18 @@ body {
     font-size: clamp(1.3rem, 3.5vw, 1.5rem);
 }
 
+.subtext {
+    color: white;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    line-height: 1.6;
+    font-style: italic;
+}
+
 .details-card p {
     color: white;
     font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.6;
+
 }
 
 .motif {
@@ -578,7 +681,7 @@ body {
 
 #rsvp {
     background: #6c001b;
-    padding: 50px;
+    padding: clamp(20px, 5vw, 50px);
 }
 
 .rsvp-btn {
@@ -603,10 +706,11 @@ body {
 }
 
 .rsvp-card {
+    display: block;
     background: #ffffff;
     border-radius: 12px;
     border: 1px solid #e0e0e0;
-    padding: 24px;
+    padding: clamp(14px, 4vw, 24px);;
     max-width: 480px;
     width: 100%;
 }
@@ -858,6 +962,14 @@ button:hover {
  
     .chapter-body {
         font-size: 0.95rem;
+    }
+
+    .rsvp-section {
+        padding: 20px 8px;
+    }
+
+    .rsvp-card {
+        border-radius: 8px;
     }
 }
 
