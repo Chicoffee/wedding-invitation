@@ -46,41 +46,44 @@ const container = document.getElementById('leaves');
 const leafImages = ['./assets/leaves/leaf.png', './assets/leaves/leaf2.png', './assets/leaves/leaf3.png', './assets/leaves/leaf4.png'];
 
 const colorFilters = [
-  "grayscale(1) sepia(1) hue-rotate(320deg) saturate(4.0) brightness(0.6)",   // deep burgundy
-  "grayscale(1) sepia(1) hue-rotate(10deg) saturate(3.5) brightness(0.55)",   // dark crimson
-  "grayscale(1) sepia(1) hue-rotate(25deg) saturate(3.0) brightness(0.58)",   // brick red
-  "grayscale(1) sepia(1) hue-rotate(340deg) saturate(3.8) brightness(0.5)",   // dark wine
-  "grayscale(1) sepia(1) hue-rotate(350deg) saturate(2.8) brightness(0.65)"   // russet
+  "grayscale(1) sepia(1) hue-rotate(320deg) saturate(4.0) brightness(0.6)",
+  "grayscale(1) sepia(1) hue-rotate(10deg) saturate(3.5) brightness(0.55)",
+  "grayscale(1) sepia(1) hue-rotate(25deg) saturate(3.0) brightness(0.58)",
+  "grayscale(1) sepia(1) hue-rotate(340deg) saturate(3.8) brightness(0.5)",
+  "grayscale(1) sepia(1) hue-rotate(350deg) saturate(2.8) brightness(0.65)"
 ];
 
-function createLeaf() {
-    const leaf = document.createElement('img');
-    leaf.className = 'leaf';
+const LEAF_COUNT = 25;
 
+function animateLeaf(leaf) {
+    const duration = Math.random() * 20 + 15;
     const left = Math.random() * 100;
-    const duration = Math.random() * 20 + 15; 
-    const size = Math.random() * 18 + 26;    
-    const rotation = Math.random() * 100 - 50;
-            
+    const size = Math.random() * 18 + 26;
     const randomImage = leafImages[Math.floor(Math.random() * leafImages.length)];
     const randomFilter = colorFilters[Math.floor(Math.random() * colorFilters.length)];
 
     leaf.src = randomImage;
     leaf.style.left = `${left}vw`;
     leaf.style.width = `${size}px`;
-    leaf.style.animationDuration = `${duration}s`;
-    leaf.style.transform = `rotate(${rotation}deg)`;
     leaf.style.filter = randomFilter;
 
+    leaf.style.animation = 'none';
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            leaf.style.animation = `fall ${duration}s linear forwards`;
+        });
+    });
+
+    leaf.addEventListener('animationend', () => animateLeaf(leaf), { once: true });
+}
+
+for (let i = 0; i < LEAF_COUNT; i++) {
+    const leaf = document.createElement('img');
+    leaf.className = 'leaf';
     container.appendChild(leaf);
-
-
-    setTimeout(() => {
-        leaf.remove();
-        }, duration * 1000 + 4000);
-    }
-
-    setInterval(createLeaf, 700);
+    setTimeout(() => animateLeaf(leaf), i * 600);
+}
 
 //slider image
 const slides = document.querySelectorAll(".slide");
@@ -138,15 +141,4 @@ window.addEventListener('load', () => {
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
     }, 7000);
-});
-
-//Popup
-function togglePopup(id) {
-    document.getElementById(id).classList.toggle('active');
-}
-
-document.getElementById('attending').addEventListener('change', function () {
-    const isYes = this.value === 'yes';
-    document.getElementById('guestSection').style.display = isYes ? '' : 'none';
-    document.getElementById('guestNamesSection').style.display = isYes ? '' : 'none';
 });

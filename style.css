@@ -222,6 +222,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 40px;
     box-shadow: 0 10px 20px rgba(243, 242, 242, 0.3);
     gap: clamp(12px, 3vw, 20px);
@@ -613,6 +614,11 @@ body {
     gap: clamp(12px, 3vw, 20px);
 }
 
+.godsparent-attire {
+    height: 200px;
+    max-width: 100%;
+}
+
 .card-tag {
     font-style: italic;
 }
@@ -620,6 +626,12 @@ body {
 .attire-icon {
     height: clamp(65px, 14vw, 100px);
     width: clamp(65px, 14vw, 100px);
+    transform: bounce .5s ease infinite alternate;
+}
+
+.attire-godsparents-icon {
+    height: clamp(55px, 12vw, 80px);
+    width: clamp(55px, 12vw, 80px);
     transform: bounce .5s ease infinite alternate;
 }
 

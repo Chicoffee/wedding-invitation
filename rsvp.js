@@ -1,3 +1,25 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBAoh-7DL7O3QeZJB30Z3rsr-Qoi-XiLXk",
+  authDomain: "rsvp-wedsite.firebaseapp.com",
+  projectId: "rsvp-wedsite",
+  storageBucket: "rsvp-wedsite.firebasestorage.app",
+  messagingSenderId: "757710520275",
+  appId: "1:757710520275:web:7bfbc20b3ee155ce24f926",
+  measurementId: "G-47JJPW1L49"
+  };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 // rsvp.js
 import { db } from "./firebase-config.js";
 import {
