@@ -1,13 +1,53 @@
-/* ===== INTRO / LOADING SCREEN ===== */
+:root {
+    --base-color: #000000;
+    --shimmer-color: #d4a017;
+    --shimmer-width: 10%;
+    --cream: #FBF7F2;
+    --ink: #3A3530;
+    --rose: #C98C7C;
+    --sage: #8A9A86;
+    --line: #E3D9CE;
+}
+
 .intro {
+    background-image: url('./assets/timeline/intro-bg-mobile.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--cream);
   z-index: 10001;
   transition: opacity 1s ease, visibility 1s ease;
+}
+
+
+#stage-monogram::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 248, 240, 0.35);
+  z-index: -1;
+}
+
+#stage-welcome::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: -1;
+}
+
+.intro-stage {
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .intro {
+    background-image: url('./assets/timeline/intro-bg-wide.jpg');
+  }
 }
 
 .intro.hide {
