@@ -15,8 +15,19 @@
     <link rel="icon" type="image/png" href="./assets/icons/web-icon.png">
 
     <title>Wedding Invitation</title>
+
+     <style>
+        body { opacity: 0; }
+    </style>
+
 </head>
 <body>
+
+    <!--Instant Main content pain fix-->
+    <script>
+        document.documentElement.style.setProperty('--body-ready', '1');
+        document.body.style.opacity = '1';
+    </script>
 
     <!--Falling Leaves-->
    <div class="leaves-container" id="leaves"></div>
