@@ -140,10 +140,5 @@ window.addEventListener('load', () => {
         intro.classList.add('hide');
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
-
-        document.querySelectorAll('body > *:not(#intro)').forEach(el => {
-            el.style.opacity = '';
-            el.style.pointerEvents = '';
-        });
     }, 7000);
 });

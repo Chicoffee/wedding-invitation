@@ -10,7 +10,7 @@
 }
 
 .intro {
-    background-image: url('./assets/timeline/intro-bg-mobile.webp');
+  background-image: url('./assets/timeline/intro-bg-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -153,7 +153,7 @@
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--sage);
+  color: var(--rose);
   opacity: 0;
   animation: intro-fade-up 1s ease forwards;
   animation-delay: 3.4s;
