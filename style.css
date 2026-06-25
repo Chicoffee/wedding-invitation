@@ -249,6 +249,88 @@ body {
     line-height: 1.7;
 }
 
+.timeline-card {
+    width: min(550px, 92%);
+    margin-top: 40px;
+    padding: clamp(20px, 5vw, 35px);
+    border: 2px solid hsla(0, 20%, 86%, 0.427);
+    background: #9C1F2E;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(243, 242, 242, 0.3);
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-header i {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-header h1 {
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+}
+
+.timeline-header p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: rgba(255, 255, 255, 0.65);
+    font-style: italic;
+    margin: 0;
+}
+
+.timeline-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #d23f50;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.timeline-time {
+    font-size: clamp(0.65rem, 1.8vw, 0.78rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-event {
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    color: #fff;
+}
+
 .map-card {
     width: min(550px, 92%);
     margin-top: 40px;
@@ -651,6 +733,13 @@ body {
     gap: clamp(12px, 3vw, 20px);
 }
 
+.details-row {
+    display: flex;
+    justify-content: center;
+    gap: clamp(10px, 2.5vw, 16px);
+    flex-wrap: wrap;
+}
+
 .godsparent-attire {
     height: 200px;
     max-width: 100%;
@@ -729,7 +818,6 @@ body {
 }
 
 #rsvp {
-    background: #6c001b;
     padding: clamp(20px, 5vw, 50px);
 }
 
