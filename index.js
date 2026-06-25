@@ -9,6 +9,44 @@ window.addEventListener("scroll", () => {
     }
 });
 
+//play btn
+const btn = document.getElementById('play-btn');
+const audio = document.getElementById('audio');
+const icon = document.getElementById('icon');
+
+function swapIcon(playing) {
+    icon.classList.add('fade-out');
+
+    setTimeout(() => {
+        icon.className = playing
+            ? 'fa-solid fa-pause fade-out'
+            : 'fa-solid fa-play fade-out';
+
+        icon.offsetWidth;
+
+        icon.classList.remove('fade-out');
+    }, 200);
+}
+
+//autoplay function
+document.addEventListener('click', () => {
+    audio.play();
+    swapIcon(true);
+    btn.setAttribute('aria-label', 'Pause');
+}, {once: true});
+
+btn.addEventListener('click', () => {
+    if(audio.paused) {
+        audio.play();
+        swapIcon(true);
+        btn.setAttribute('aria-label', 'Pause');
+    } else {
+        audio.pause();
+        swapIcon(false);
+        btn.setAttribute('aria-label', 'play');
+    }
+});
+
 //Countdown Timer
 const Days = document.getElementById('days');
 const Hours = document.getElementById('hours');
