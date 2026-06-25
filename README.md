@@ -1,4 +1,4 @@
-# 💍 Arwin & Jenelyn — Wedding Invitation Website
+# 💍 Wedding Invitation Website
 
 A digital wedding invitation website for couples to share their special day with family and friends — featuring their love story, event details, entourage, and an RSVP system.
 
