@@ -9,12 +9,12 @@ A digital wedding invitation website for couples to share their special day with
 ## Features
 
 - **Hero Section** — Animated opening with couple's names, wedding date, and background music
-- **Save the Date Calendar** — Interactive calendar highlighting August 27, 2026
-- **Countdown Timer** — Live countdown to the ceremony at 12:30 PM
+- **Save the Date Calendar** — Interactive calendar
+- **Countdown Timer** — Live countdown to the ceremony
 - **Venue & Location** — Embedded Google Maps for Villa Leonora Resort and Venue
-- **Our Story** — A photo slider and timeline of the couple's journey from 2018 to their engagement
+- **Our Story** — A photo slider and timeline of the couple's journey
 - **Entourage** — Full listing of the wedding party including principal sponsors, godparents, and bearers
-- **Reminders** — Dress code guidelines for godparents (maroon & black) and guests (black), gift guide, and program reminders
+- **Reminders** — Dress code, gift guide, and program reminders
 - **RSVP Form** — Guest confirmation form with attendance status, party size, and guest names; supports re-submission to update responses
 - **Admin Panel** — Password-protected admin page for managing RSVPs
 
@@ -54,25 +54,13 @@ A digital wedding invitation website for couples to share their special day with
 | Section | Description |
 |---|---|
 | Hero | Opening animation with couple names and date |
-| Save the Date | Calendar with August 27 highlighted |
+| Save the Date | Calendar|
 | Location | Venue address and embedded map |
 | Countdown | Live timer to the ceremony |
 | Our Story | Photo slider + milestone timeline |
 | Entourage | Full wedding party listing |
 | Reminders | Dress code, gift guide, and event reminders |
 | RSVP | Guest attendance confirmation form |
-
----
-
-## Wedding Details
-
-| | |
-|---|---|
-| **Date** | Thursday, August 27, 2026 |
-| **Time** | 12:30 PM |
-| **Venue** | Villa Leonora Resort and Venue |
-| **Address** | L5 Igay Road, Brgy Santo Cristo, CSJDM, Bulacan 3023 |
-| **RSVP Deadline** | July 10, 2026 |
 
 ---
 
