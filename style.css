@@ -294,6 +294,18 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    position: relative;
+}
+
+.timeline-body::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: -1;
 }
 
 .timeline-item {
